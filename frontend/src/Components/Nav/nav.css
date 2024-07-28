@@ -1,0 +1,26 @@
+ul.home-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex; /* Use flexbox for horizontal alignment */
+}
+
+ul.home-ul li {
+    float: inline; /* Display list items inline */
+}
+
+ul.home-ul .home-a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 4px 8px;
+    text-decoration: none;
+    font-size: 8px ; /*Adjust font size here */
+    line-height: normal;  /* Adjust line height if necessary */
+}
+
+ul.home-ul .home-a:hover {
+    background-color: #111;
+}
