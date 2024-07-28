@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
         <Nav/>
-        <h1>Home</h1>
+        <h1>HOME</h1>
     </div>
   )
 }

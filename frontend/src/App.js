@@ -13,12 +13,11 @@ function App() {
         <Routes>
           <Route path ="/" element = {<Home/>}/>
           <Route path ="/mainhome" element = {<Home/>}/>
-          <Route path ="/allUsers" element = {<Users/>}/>
+          <Route path ="/allUsers" element = {<Users/>}/>   
           <Route path ="/About Us" element = {<AboutUs/>}/>
           <Route path ="/Sign Up" element = {<SignUp/>}/>
 
-          
-          
+
 
         </Routes>
       </React.Fragment>
