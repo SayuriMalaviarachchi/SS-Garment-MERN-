@@ -28,6 +28,26 @@ export default function Users() {
     onafterprint:()=>alert("Users Report successfully Download !")
   })
 
+  //Search function
+  const [searchQuery , setSearchQuery] = useState("")
+  const [noResults,setNoResults] = useState(false)
+
+  const handleSearch = () => {
+    fetchHandler().then((data) => {
+      const filteredUsers = data.users.filter((user) =>
+      Object.values(user).some)((field
+
+
+
+
+
+
+
+        
+      )))
+    })
+  }
+
   return (
 
     <div>

@@ -17,6 +17,8 @@ export default function User(props) {
       .then(() => history("/")) 
       .then(() => history("/allUsers"))
     }
+
+    
   return (
     <div>
       
