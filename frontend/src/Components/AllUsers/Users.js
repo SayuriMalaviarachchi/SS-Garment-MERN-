@@ -42,6 +42,16 @@ export default function Users() {
       setNoResults(filteredUsers.length == 0)
     })
   }
+  const handleSendReport = () => {
+    //Create whatsapp chat URL
+    const phoneNumber = "+940702691922"
+    const message = `selected User Reports`
+    const whatsAppUrl = `https://web.whatsapp.com/send?phone = ${phoneNumber}&text=${encodeURIComponent(
+      message
+    )}`
+    //Open whatsapp chat in new window
+    window.open(whatsAppUrl,"_blank")
+  }
 
   return (
 
@@ -77,6 +87,12 @@ export default function Users() {
         </div>
       )}
         <button onClick={handlePrint}>Download User Details Report</button>
+
+        <br></br>
+
+        <button onClick={handleSendReport}>Send whatsapp message</button>
+
+
     </div>
   )
 }
