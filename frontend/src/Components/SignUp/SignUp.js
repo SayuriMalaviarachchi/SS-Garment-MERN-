@@ -24,7 +24,7 @@ export default function SignUp() {
   const handleSubmit =(e) =>{//redirecting page
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(()=> history('allUsers')) // 2 different ways
+    sendRequest().then(()=> history('/mainhome')) // 2 different ways
   }
 
   const sendRequest = async() =>{

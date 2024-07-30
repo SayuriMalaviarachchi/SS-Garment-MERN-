@@ -6,6 +6,7 @@ import Users from './Components/AllUsers/Users';
 import AboutUs from './Components/About Us/AboutUs';
 import SignUp from './Components/SignUp/SignUp';
 import UpdateUser from './Components/UpdateUser/UpdateUser';
+import User from './Components/User/UserDetails';
 
 function App() {
   return (

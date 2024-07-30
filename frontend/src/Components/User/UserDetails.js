@@ -1,9 +1,22 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-
+import axios from "axios"
+import { useNavigate } from 'react-router-dom'
 
 export default function User(props) {
+
     const{_id,name,gmail,phone,address} = props.user
+
+    //delete fuction
+
+    const history = useNavigate()
+
+    const deleteHandler = async() => {
+      await axios.delete(`http://localhost:5000/users/${_id}`)
+      .then(res => res.data)
+      .then(() => history("/")) 
+      .then(() => history("/allUsers"))
+    }
   return (
     <div>
       
@@ -19,7 +32,7 @@ export default function User(props) {
       <h1>Address:{address}</h1>
 
       <Link to ={`/allUsers/${_id}`}>Update</Link>
-      <button>Delete</button>
+      <button onClick={deleteHandler}>Delete</button>
 
     </div>
   )
