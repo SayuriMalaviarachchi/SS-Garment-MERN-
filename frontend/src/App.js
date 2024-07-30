@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home"
 import Users from './Components/AllUsers/Users';
 import AboutUs from './Components/About Us/AboutUs';
 import SignUp from './Components/SignUp/SignUp';
+import UpdateUser from './Components/UpdateUser/UpdateUser';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path ="/allUsers" element = {<Users/>}/>   
           <Route path ="/About Us" element = {<AboutUs/>}/>
           <Route path ="/Sign Up" element = {<SignUp/>}/>
+          <Route path ="/allUsers/:id" element = {<UpdateUser/>}/>  
 
 
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 
 export default function User(props) {
@@ -10,13 +11,15 @@ export default function User(props) {
 
       <br></br>
 
-      <h1>ID:{_id}</h1>
+      
+      <h1>ID:{_id}</h1>   
       <h1>Name:{name}</h1>
       <h1>Gmail:{gmail}</h1>
       <h1>Phone:{phone}</h1>
       <h1>Address:{address}</h1>
-      <button>Update:</button>
-      <button>Delete:</button>
+
+      <Link to ={`/allUsers/${_id}`}>Update</Link>
+      <button>Delete</button>
 
     </div>
   )

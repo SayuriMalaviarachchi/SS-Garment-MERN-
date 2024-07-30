@@ -1,19 +1,38 @@
-import React, { useState } from 'react'
-import Nav from '../Nav/Nav'
-import { useNavigate } from 'react-router-dom'
+import React,{useEffect,useState} from 'react'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import Nav from '../Nav/Nav'
 
-export default function SignUp() {
+export default function UpdateUser() {
+    
+    const [inputs,setInputs] = useState({})
+    const history = useNavigate()
+    const id = useParams().id // this name should be same in app.js(.id)
 
-  const history = useNavigate()
+    useEffect(() =>{
 
-  const [inputs,setInputs] = useState({//calling data set
-    name:"",
-    gmail:"",
-    phone:"",
-    address:"",
-  })
+        const fetchHandler = async () => {
+            await axios
+            .get(`http://localhost:5000/users/${id}`)
+            .then((res) => res.data)
+            .then((data) => setInputs(data.user))
+        }
+        fetchHandler()
+    },[id])
 
+    //to insert updated data to DB
+    const sendRequest = async() => {
+        await axios.put(`http://localhost:5000/users/${id}`,{
+        name:String(inputs.name),
+        gmail:String(inputs.gmail),
+        phone:Number(inputs.phone),
+        address:String(inputs.address),
+    })
+        .then((res) => res.data)
+    }
+
+    
   const handleChange =(e) =>{
     setInputs ((prevState) => ({
       ...prevState,
@@ -24,21 +43,15 @@ export default function SignUp() {
   const handleSubmit =(e) =>{//redirecting page
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(()=> history('allUsers')) // 2 different ways
+    sendRequest().then(()=> history("/allUsers"))
   }
 
-  const sendRequest = async() =>{
-    await axios.post("http://localhost:5000/users",{
-      name:String(inputs.name),
-      gmail:String(inputs.gmail),
-      phone:Number(inputs.phone),
-      address:String(inputs.address),
-    }).then(res => res.data)
-  }
+
+
   return (
-
     <div>
-
+      
+      
       <Nav/>
 
       <h1>SignUp</h1>
@@ -72,6 +85,7 @@ export default function SignUp() {
         <button>Submit</button>
       </form>
 
+ 
     </div>
   )
 }
