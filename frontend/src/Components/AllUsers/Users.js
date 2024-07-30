@@ -35,16 +35,11 @@ export default function Users() {
   const handleSearch = () => {
     fetchHandler().then((data) => {
       const filteredUsers = data.users.filter((user) =>
-      Object.values(user).some)((field
-
-
-
-
-
-
-
-        
-      )))
+      Object.values(user).some((field) =>
+      field.toString().toLowerCase().includes(searchQuery.toLowerCase())
+    ))
+      setUsers(filteredUsers)
+      setNoResults(filteredUsers.length == 0)
     })
   }
 
@@ -56,6 +51,20 @@ export default function Users() {
 
         <h1>All Users</h1>
 
+        <input onChange={(e) => setSearchQuery(e.target.value)}
+        type = "text"
+        name ="search"
+        placeholder = "Search Users Here"></input>
+
+        <button onClick={handleSearch}>Search</button>
+
+        {noResults ? (
+          <div>
+            <p>No Users Found</p>
+            </div>
+        ) :(
+
+
         <div  ref={ComponentsRef}>
 
           {users && users.map((user,i) => (
@@ -64,9 +73,9 @@ export default function Users() {
 
             </div>
           ))}
-           
-
+       
         </div>
+      )}
         <button onClick={handlePrint}>Download User Details Report</button>
     </div>
   )
