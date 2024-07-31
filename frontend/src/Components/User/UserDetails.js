@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function User(props) {
 
-    const{_id,name,gmail,phone,address} = props.user
+    const{_id,name,password,gmail,phone,address} = props.user
 
     //delete fuction
 
@@ -29,6 +29,7 @@ export default function User(props) {
       
       <h1>ID:{_id}</h1>   
       <h1>Name:{name}</h1>
+      <h1>Password:{password}</h1>
       <h1>Gmail:{gmail}</h1>
       <h1>Phone:{phone}</h1>
       <h1>Address:{address}</h1>

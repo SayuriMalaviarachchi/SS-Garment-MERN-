@@ -26,13 +26,13 @@ const getAllUsers = async (req , res , next) => {
 //To insert data
 const addUsers = async (req , res , next) => {
 
-    const { name,gmail,phone,address} = req.body;
+    const { name,password,gmail,phone,address} = req.body;
 
     //Create a variable
     let user;
 
     try {
-        user = new User({name,gmail,phone,address})
+        user = new User({name,password,gmail,phone,address})
         // To save to DB
         await user.save()
     } catch (err) {
@@ -70,13 +70,13 @@ const updateUser = async (req, res ,next) => {
 
     const id = req.params.id 
 
-    const { name,gmail,phone,address} = req.body;
+    const { name,password,gmail,phone,address} = req.body;
 
     let users
 
     try {
         users = await User.findByIdAndUpdate(id,
-            { name : name, gmail : gmail, phone : phone ,address : address})//
+            { name : name, password:password,  gmail : gmail, phone : phone ,address : address})//
         users = await users.save()
     } catch (err) {
         console.log(err)

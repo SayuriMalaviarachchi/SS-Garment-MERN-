@@ -39,7 +39,7 @@ export default function Users() {
       field.toString().toLowerCase().includes(searchQuery.toLowerCase())
     ))
       setUsers(filteredUsers)
-      setNoResults(filteredUsers.length == 0)
+      setNoResults(filteredUsers.length === 0)
     })
   }
   const handleSendReport = () => {

@@ -5,71 +5,84 @@ import axios from 'axios'
 
 export default function SignUp() {
 
-  const history = useNavigate()
+const history = useNavigate()
 
-  const [inputs,setInputs] = useState({//calling data set
+  const [user,setUser] = useState({//calling data set
     name:"",
+    password:"",
     gmail:"",
     phone:"",
     address:"",
   })
 
-  const handleChange =(e) =>{
-    setInputs ((prevState) => ({
-      ...prevState,
-      [e.target.name]:e.target.value,
+  const handleInputChange =(e) =>{
+    const {name,value} = e.target
+    setUser((prevUser) => ({
+      ...prevUser,[name]: value
     }))
   }
 
-  const handleSubmit =(e) =>{//redirecting page
+  const handleSubmit =(e) =>{
     e.preventDefault();
-    console.log(inputs);
-    sendRequest().then(()=> history('/mainhome')) // 2 different ways
+    
+    sendRequest().then(()=>{
+      alert("Successfully Signed up") 
+      history('/mainhome')//redirecting page
+  }).catch((err) => {
+    alert(err.message)
+  }) // 2 different ways
   }
 
   const sendRequest = async() =>{
-    await axios.post("http://localhost:5000/users",{
-      name:String(inputs.name),
-      gmail:String(inputs.gmail),
-      phone:Number(inputs.phone),
-      address:String(inputs.address),
+    await axios.post("http://localhost:5000/signUp",{
+      name:String(user.name),
+      password:String(user.password),
+      gmail:String(user.gmail),
+      phone:Number(user.phone),
+      address:String(user.address),
     }).then(res => res.data)
-  }
+  } 
   return (
 
     <div>
 
       <Nav/>
 
-      <h1>SignUp</h1>
+      <h1>Sign Up</h1>
 
       <form onSubmit={handleSubmit}>
 
-        <label>name</label>
+        <label>Name</label>
         <br></br>
-        <input type = "text" name="name" onChange={handleChange} value={inputs.name} required></input>
-        <br></br>
-        <br></br>
-
-        <label>gmail</label>
-        <br></br>
-        <input type = "gmail" name="gmail" onChange={handleChange}  value={inputs.gmail}  required></input>
+        <input type = "text" value={user.name} name="name" onChange={handleInputChange}  required></input>
         <br></br>
         <br></br>
 
-        <label>phone</label>
+        <label>Password</label>
         <br></br>
-        <input type = "tel" name="phone" onChange={handleChange}  value={inputs.phone}  required></input>
-        <br></br>
-        <br></br>
-
-        <label>address</label>
-        <br></br>
-        <input type = "text" name="address" onChange={handleChange}  value={inputs.address}  required></input>
+        <input type = "password" value={user.password} onChange={handleInputChange}  name="password" required></input>
         <br></br>
         <br></br>
 
-        <button>Submit</button>
+        <label>Gmail</label>
+        <br></br>
+        <input type = "email" value={user.gmail}  onChange={handleInputChange}  name="gmail" required></input>
+        <br></br>
+        <br></br>
+
+        <label>Phone</label>
+        <br></br>
+        <input type = "tel" value={user.phone} onChange={handleInputChange}  name="phone" required></input>
+        <br></br>
+        <br></br>
+
+        <label>Address</label>
+        <br></br>
+        <input type = "text"  value={user.address}  onChange={handleInputChange}  name="address" required></input>
+        <br></br>
+        <br></br>
+
+        <button>Sign Up</button>
       </form>
 
     </div>

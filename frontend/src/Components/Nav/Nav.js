@@ -24,8 +24,18 @@ export default function Nav() {
         </Link>
 
         <li className=" home-ll"></li>
+        <Link to="/addUser" className="active home-a">
+        <h1>Add User</h1>
+        </Link>
+
+        <li className=" home-ll"></li>
         <Link to="/Sign Up" className="active home-a">
-        <h1>Sign Up</h1>
+        <button>Sign Up</button>
+        </Link>
+
+        <li className=" home-ll"></li>
+        <Link to="/log Up" className="active home-a">
+        <button>Login</button>
         </Link>
 
 

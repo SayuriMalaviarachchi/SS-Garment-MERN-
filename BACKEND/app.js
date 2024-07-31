@@ -22,3 +22,19 @@ mongoose.connect("mongodb+srv://admin:Njt9LGP2LSKYla5J@cluster0.fobepbq.mongodb.
     app.listen(5000)
 })
 .catch((err) => console.log((err)));
+
+//Call UserSignUpModel for sign up
+require("./Model/UserSignUpModel")
+const User = mongoose.model("SignUp")//File name
+app.post("/signUp" ,async(req,res) =>{ //"/SignUp" should be the same name in frontend Sign Up page URL
+    const {name,password,gmail,phone,address} = req.body
+    try{
+        await User.create({
+            name,password,gmail,phone,address,
+        })
+        res.send({status:"ok"})
+    }catch(err){
+        res.send({status:"err"})//err
+
+    }
+})
