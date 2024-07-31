@@ -9,6 +9,7 @@ import UpdateUser from './Components/UpdateUser/UpdateUser';
 import AddUser from './Components/AddUser/AddUser'
 import Login from './Components/Login/Login'
 import User from './Components/User/UserDetails';
+import ContactUs from './Components/ContactUs/ContactUs';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path ="/About us" element = {<AboutUs/>}/>
           <Route path ="/Sign Up" element = {<SignUp/>}/>
           <Route path ="/log up" element = {<Login/>}/>
+          <Route path ="/contactus" element = {<ContactUs/>}/>
          < Route path ="/addUser" element = {<AddUser/>}/>
           <Route path ="/allUsers/:id" element = {<UpdateUser/>}/>  
 
