@@ -25,7 +25,7 @@ const history = useNavigate()
   const handleSubmit =(e) =>{//what will happen when submit button is pressed.
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(()=>history('mainhome'))//redirecting page
+    sendRequest().then(()=>history('/mainhome'))//redirecting page
    // 2 different ways
   }
 
