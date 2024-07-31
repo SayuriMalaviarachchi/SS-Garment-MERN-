@@ -38,3 +38,23 @@ app.post("/signUp" ,async(req,res) =>{ //"/SignUp" should be the same name in fr
 
     }
 })
+
+//Login 
+
+app.post("/login" ,async(req,res) =>{ //"/SignUp" should be the same name in frontend Sign Up page URL
+    const {gmail,password} = req.body
+    try{
+        const user = await User.findOne({gmail})
+       if(!user){
+        return res.json({err: "User not found"})
+       }
+       if(user.password === password){
+        return res.json({status:"ok"})
+       }else{
+        return res.json({err:"Incorrect password"})
+       }
+    }catch(err){
+        console.error(err)
+        res.status(500).json ({err:"Server Error"})//err
+
+    }})
