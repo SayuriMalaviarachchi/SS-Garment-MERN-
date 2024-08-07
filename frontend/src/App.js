@@ -10,6 +10,7 @@ import AddUser from './Components/AddUser/AddUser'
 import Login from './Components/Login/Login'
 import User from './Components/User/UserDetails';
 import ContactUs from './Components/ContactUs/ContactUs';
+import SendPdf from './Components/SendPDF/SendPdf';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path ="/mainhome" element = {<Home/>}/>
           <Route path ="/allUsers" element = {<Users/>}/>   
           <Route path ="/About us" element = {<AboutUs/>}/>
+          <Route path ="/sendPdf" element = {<SendPdf/>}/>
           <Route path ="/Sign Up" element = {<SignUp/>}/>
           <Route path ="/log up" element = {<Login/>}/>
           <Route path ="/contactus" element = {<ContactUs/>}/>

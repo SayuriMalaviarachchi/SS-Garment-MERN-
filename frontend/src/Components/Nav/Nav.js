@@ -34,6 +34,11 @@ export default function Nav() {
         </Link>
 
         <li className=" home-ll"></li>
+        <Link to="/sendPdf" className="active home-a">
+        <h1>Upload PDF</h1>
+        </Link>
+
+        <li className=" home-ll"></li>
         <Link to="/Sign Up" className="active home-a">
         <button>Sign Up</button>
         </Link>
