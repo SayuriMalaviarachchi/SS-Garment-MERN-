@@ -13,8 +13,8 @@ export default function ContactUs() {
           publicKey: 'BvkxGyrRKiViaDJQm',
         })
         .then(
-          () => {
-            console.log('SUCCESS!');
+          (result) => {
+            console.log(result.text);
             alert('Success')
          
           },
