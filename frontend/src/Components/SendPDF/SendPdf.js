@@ -22,8 +22,8 @@ export default function SendPdf() {
         e.preventDefault()
 
         const formData = new FormData()
-        formData.append('title',title)
-        formData.append('file',file)
+        formData.append("title",title)
+        formData.append("file",file)
         console.log(title,file)
    
 
@@ -31,7 +31,8 @@ export default function SendPdf() {
         const result = await axios.post
         ("http://localhost:5000/uploadfile",
             formData,{
-                headers:{'Content-Type': 'multipart/form-data'}
+                headers:{"Content-Type": "multipart/form-data"
+                },
         })
         console.log(result)
         
@@ -44,7 +45,7 @@ export default function SendPdf() {
        
     }catch (error){
         console.error("Error uploading : " + error.message)
-        alert("Error uploading : ")
+        alert("Error uploading !")
     }
 }
 
