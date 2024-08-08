@@ -5,12 +5,12 @@ import axios from 'axios'
 export default function SendPdf() {
 
     const [title,setTitle] = useState("")
-    const [file,setFile] = useState("")
+    const [file,saveFile] = useState("")
     const [allPdf,setAllPdf] = useState("")
 
     useEffect(() => {
         getpdf()
-    })
+    },[])
 
     const getpdf = async () => {
         const result = await axios.get("http://localhost:5000/getFile")
@@ -51,12 +51,12 @@ export default function SendPdf() {
   return (
     <div>
         <Nav/>
-        <form>
+        <form onSubmit={submitPdf}>
             <label>PDF Title</label><br></br>
-            <input required type = "text"></input><br></br><br></br>
+            <input required type = "text" onChange={(e) => setTitle(e.target.value)}></input><br></br><br></br>
 
             <label>Select PDF File</label><br></br>
-            <input type = 'file' accept='application/pdf' required></input><br></br><br></br>
+            <input type = 'file' accept='application/pdf' onChange={(e) => saveFile(e.target.files[0])} required></input><br></br><br></br>
 
             <button>Submit</button>
         </form>

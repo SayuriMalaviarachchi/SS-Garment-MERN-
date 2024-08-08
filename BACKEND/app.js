@@ -12,6 +12,7 @@ const cors = require("cors")
 app.use(express.json())//We make repsonsiveness of the data that we send from postmon  
 app.use(cors())
 app.use("/users" , router);
+app.use("/files",express.static("files"))
 
 
 
@@ -58,3 +59,45 @@ app.post("/login" ,async(req,res) =>{ //"/SignUp" should be the same name in fro
         res.status(500).json ({err:"Server Error"})//err
 
     }})
+
+    //PDF-----------------------------------------------------------------------------------
+    const multer = require("multer")
+    const stoarge = multer.diskStorage({
+        destination:function(req,file,cb){
+            cb(null,'./files')
+        },
+        filename:function(req,file,cb){
+            const uniqueSuffix = Date.now()
+            cb(null,uniqueSuffix + file.originalname)
+        },
+    })
+
+    //insert model
+    require("./Model/pdfModel")
+const pdfSchema = mongoose.model("PdfDetails")
+const upload = multer({stoarge})
+
+app.post("/uploadfile" ,uploe.single("file"),async(req,res) => {
+    console.log(res.files)
+    const title = res.body.title
+    const pdf = res.file.filename
+    try {
+         await pdfSchema.create({title: title , pdf : pdf})
+         console.log("PDF uploaded successfully")
+         res.send({ status : 200})
+
+    } catch (err) {
+        res.status(500).send({ status : "error"})
+        
+    }
+})
+
+app.get("/getFile", async (req,res) => {
+    try {
+        const data = await pdfSchema.find({})
+        res.send ({ status : 200 , data : data})
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ status: "error"})
+    }
+})
