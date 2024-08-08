@@ -6,7 +6,10 @@ export default function SendPdf() {
 
     const [title,setTitle] = useState("")
     const [file,saveFile] = useState("")
+    
+    //view pdf variables
     const [allPdf,setAllPdf] = useState("")
+    const[pdfFile,setPDFFile] = useState("")
 
     useEffect(() => {
         getpdf()
@@ -45,9 +48,13 @@ export default function SendPdf() {
        
     }catch (error){
         console.error("Error uploading : " + error.message)
-        alert("Error uploading !")
+        alert("Error uploading!")
     }
 }
+    const showPdf = (pdf) => {
+        setPDFFile(`http://localhost:5000/${pdf}`)
+    }
+
 
   return (
     <div>
