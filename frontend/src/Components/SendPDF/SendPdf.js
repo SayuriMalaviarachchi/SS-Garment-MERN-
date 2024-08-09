@@ -48,7 +48,7 @@ export default function SendPdf() {
        
     }catch (error){
         console.error("Error uploading : " + error.message)
-        alert("Error uploading!")
+        alert("Error uploading!!!")
     }
 }
     const showPdf = (pdf) => {
