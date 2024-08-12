@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Nav from '../Nav/Nav'
 import axios from 'axios'
+import PdfComp from './PdfComp'
+import { pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    -  'pdfjs-dist/build/pdf.worker.min.mjs',
+    +  'pdfjs-dist/legacy/build/pdf.worker.min.mjs',
+       import.meta.url,
+     ).toString();
 
 export default function SendPdf() {
 
@@ -8,8 +16,8 @@ export default function SendPdf() {
     const [file,saveFile] = useState("")
     
     //view pdf variables
-    const [allPdf,setAllPdf] = useState("")
-    const[pdfFile,setPDFFile] = useState("")
+    const [allPdf,setAllPdf] = useState(null)
+    const[pdfFile,setPDFFile] = useState(null)
 
     useEffect(() => {
         getpdf()
@@ -47,12 +55,12 @@ export default function SendPdf() {
         }
        
     }catch (error){
-        console.error("Error uploading : " + error.message)
-        alert("Error uploading!!!")
+        console.error("Error uploading : " + error)
+        alert("Error uploading!")
     }
 }
     const showPdf = (pdf) => {
-        setPDFFile(`http://localhost:5000/${pdf}`)
+        setPDFFile(`http://localhost:5000/file/${pdf}`)
     }
 
 
@@ -68,6 +76,15 @@ export default function SendPdf() {
 
             <button>Submit</button>
         </form>
+        <div>
+            <h4>PDF Details</h4>
+            {allPdf == null ? "" : allPdf.map((data) => (
+                <div key = {data._id}>
+                    <h1>Title: {data.title}</h1>
+                    <button onClick ={() => showPdf(data.pdf)} > Show PDF </button>
+            </div>))}
+        </div>
+        <PdfComp pdfFile ={pdfFile}/>
 
       
     </div>
