@@ -59,7 +59,7 @@ export default function SendPdf() {
     }
 }
     const showPdf = (pdf) => {
-        setPDFFile(`http://localhost:5000/file/${pdf}`)
+        setPDFFile(`http://localhost:5000/files/${pdf}`)
     }
 
 

@@ -9,7 +9,7 @@ export default function PdfComp(props) {
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
-
+  }
   return (
     <div>
         <div>
@@ -39,5 +39,4 @@ export default function PdfComp(props) {
     </div>
     </div>
   )
-}
 }
