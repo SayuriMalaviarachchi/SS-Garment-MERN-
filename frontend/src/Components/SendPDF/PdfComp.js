@@ -12,6 +12,7 @@ export default function PdfComp(props) {
 
   return (
     <div>
+        <div>
         {props.pdfFile  ? (
             
          <Document file= {props.pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
@@ -35,6 +36,7 @@ export default function PdfComp(props) {
         Page {pageNumber} of {numPages}
       </p>
       
+    </div>
     </div>
   )
 }
