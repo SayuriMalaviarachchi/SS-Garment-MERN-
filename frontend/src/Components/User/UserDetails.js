@@ -12,13 +12,21 @@ export default function User(props) {
     const history = useNavigate()
 
     const deleteHandler = async() => {
-      await axios.delete(`http://localhost:5000/users/${_id}`)
-      .then(res => res.data)
-      .then(() => history("/")) 
-      .then(() => history("/allUsers"))
-    }
+      const userConfirmed = window.confirm(
+        "Are you sure you want to delete this user ? "
+      )
 
-    
+      if(userConfirmed){
+        try {
+          await axios.delete(`http://localhost:5000/users/${_id}`)
+          window.alert("User details deleted successfully !")
+          history("./allUsers")
+          window.location.reload()
+        } catch (error) {
+          console.error("Error deleting user details" ,error)
+        }
+      }
+    }
   return (
     <div>
       
