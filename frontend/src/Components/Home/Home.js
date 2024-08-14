@@ -6,6 +6,7 @@ export default function Home() {
     <div>
         <Nav/>
         <h1>HOME</h1>
+
     </div>
   )
 }
