@@ -1,9 +1,10 @@
+/* Navigation bar styling */
 ul.home-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #052542; /* Darker, more modern background color */
     display: flex; /* Use flexbox for horizontal alignment */
 }
 
@@ -13,14 +14,16 @@ ul.home-ul li {
 
 ul.home-ul .home-a {
     display: block;
-    color: white;
+    color:	#FFFFFF !important; /* Light grayish white for text */
     text-align: center;
-    padding: 4px 8px;
+    padding: 10px 16px; /* Slightly increase padding for better spacing */
     text-decoration: none;
-    font-size: 8px ; /*Adjust font size here */
-    line-height: normal;  /* Adjust line height if necessary */
+    font-size: 14px; /* Adjust font size for better readability */
+    line-height: normal;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
 
 ul.home-ul .home-a:hover {
-    background-color: #111;
+    background-color: #34495e; /* Slightly lighter shade for hover effect */
+    color: #ebe2e2; /* Softer gray on hover */
 }
