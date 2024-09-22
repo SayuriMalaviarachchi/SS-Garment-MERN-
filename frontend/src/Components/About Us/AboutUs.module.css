@@ -1,0 +1,22 @@
+.container {
+    background-color: #f2f2f2; /* Ash background */
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text */
+  }
+  
+  .heading {
+    color: #002244; /* Navy blue */
+    margin-bottom: 20px;
+    font-size: 2em; /* Larger font for heading */
+  }
+  
+  .content {
+    color: #333; /* Darker text for readability */
+    font-size: 1.2em; /* Slightly larger font for content */
+    line-height: 1.5; /* Improve readability */
+  }
+  

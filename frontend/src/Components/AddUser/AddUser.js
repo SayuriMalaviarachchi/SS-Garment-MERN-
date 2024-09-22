@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Nav from '../Nav/Nav';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import styles from './AddUser.module.css'; // Import the CSS module
+import styles from './AddUser.module.css';// Import the CSS module
 
 export default function SignUp() {
   const history = useNavigate();

@@ -1,0 +1,43 @@
+.container {
+    background-color: #f2f2f2; /* Ash background */
+    padding: 40px;
+    max-width: 400px; /* Limit width for the form */
+    margin: 0 auto; /* Center the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text */
+  }
+  
+  .heading {
+    color: #002244; /* Navy blue */
+    margin-bottom: 20px;
+    font-size: 2em; /* Larger font for heading */
+  }
+  
+  .label {
+    display: block; /* Label takes full width */
+    margin: 10px 0 5px; /* Spacing for label */
+    color: #002244; /* Navy blue for labels */
+  }
+  
+  .input {
+    width: 100%; /* Full width for input */
+    padding: 10px; /* Padding for input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .button {
+    background-color: #002244; /* Navy blue button */
+    color: white; /* White text on button */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Spacing above button */
+  }
+  
+  .button:hover {
+    background-color: #001a33; /* Darker navy on hover */
+  }
+  

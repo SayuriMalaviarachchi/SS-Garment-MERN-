@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Nav from '../Nav/Nav'
+import './UpdateUser.css';
 
 export default function UpdateUser() {
     

@@ -1,78 +1,99 @@
-/* SendPdf.module.css */
-.container {
-    max-width: 11000px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  form {
-    margin-bottom: 30px;
-  }
-  
-  label {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 8px;
-    display: block;
-  }
-  
-  input[type="text"],
-  input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-  }
-  
-  button {
-    padding: 12px 20px;
-    background-color: #128f07;
-    color: white;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0a7741;
-  }
-  
-  .pdfList {
-    margin-top: 30px;
-  }
-  
-  .pdfItem {
-    margin-bottom: 20px;
-  }
-  
-  .pdfTitle {
-    font-size: 1.5em;
-    color: #444;
-  }
-  
-  .showPdfButton {
-    padding: 5px 10px; /* Reduce vertical padding to 5px */
-    background-color: #114c8b;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* General styles for body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8; /* Ash background for the entire page */
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-  
-  .showPdfButton:hover {
-    background-color: #0056b3;
-  }
-  
-  .pdfViewer {
-    margin-top: 40px;
-  }
-  
+/* Styling for headers */
+h1, h4 {
+  color: #002B5C; /* Dark blue for headings */
+  text-align: center;
+}
+
+/* Form input and label styling */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #002B5C; /* Dark blue for labels */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="submit"],
+button {
+  background-color: #002B5C; /* Dark blue for buttons */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #001F3F; /* Darker blue on hover */
+}
+
+/* Nav styling */
+ul.home-ul {
+  background-color: #002B5C; /* Dark blue navbar */
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  overflow: hidden;
+}
+
+li.home-ll {
+  float: left;
+  margin-right: 20px;
+}
+
+a.home-a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 15px;
+  display: block;
+}
+
+a.home-a:hover {
+  background-color: #001F3F; /* Darker blue on hover */
+}
+
+button {
+  padding: 10px;
+  background-color: #002B5C; /* Dark blue for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #001F3F;
+}

@@ -1,58 +1,57 @@
-/* ContactUs.module.css */
 .container {
+    background-color: #f2f2f2; /* Ash background */
+    padding: 20px;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  h2 {
+  .heading {
+    color: #002244; /* Navy blue */
     text-align: center;
-    font-size: 2.5em;
-    color: #f9f9f9;
     margin-bottom: 20px;
   }
   
-  form {
+  .form {
     display: flex;
     flex-direction: column;
   }
   
-  label {
-    font-size: 1.2em;
-    color: #FFFFFF;
-    margin-bottom: 8px;
+  .label {
+    margin-bottom: 5px;
+    color: #002244; /* Navy blue */
   }
   
-  input[type="text"],
-  input[type="email"],
-  textarea {
+  .input, .textarea {
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1em;
+    margin-bottom: 15px;
+    font-size: 16px;
+    background-color: #e8e8e8; /* Light ash for inputs */
   }
   
-  textarea {
-    height: 100px;
-    resize: none;
+  .textarea {
+    resize: vertical; /* Allow vertical resizing */
   }
   
-  input[type="submit"] {
-    padding: 12px;
-    background-color: #18751a;
+  .input:focus, .textarea:focus {
+    outline: none;
+    border-color: #002244; /* Navy blue focus outline */
+  }
+  
+  .submit {
+    background-color: #002244; /* Navy blue */
     color: white;
-    font-size: 1.2em;
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
   }
   
-  input[type="submit"]:hover {
-    background-color: #45a049;
+  .submit:hover {
+    background-color: #004080; /* Lighter navy on hover */
   }
   

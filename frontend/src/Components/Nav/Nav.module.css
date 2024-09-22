@@ -1,0 +1,41 @@
+.navContainer {
+    background-color: #002244; /* Navy blue background */
+    padding: 20px;
+  }
+  
+  .navList {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Horizontal layout */
+    justify-content: space-around; /* Space between items */
+    flex-wrap: wrap; /* Wrap items if needed */
+  }
+  
+  .navItem {
+    margin: 0 15px; /* Spacing between items */
+  }
+  
+  .navLink {
+    text-decoration: none; /* Remove underline */
+    color: #f2f2f2; /* Light color for text */
+    font-size: 1.2em; /* Larger text */
+    transition: color 0.3s; /* Smooth transition on hover */
+  }
+  
+  .navLink:hover {
+    color: #ffffff; /* Change color on hover */
+  }
+  
+  .button {
+    background-color: #f2f2f2; /* Ash button */
+    color: #002244; /* Navy text for button */
+    border: none;
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .button:hover {
+    background-color: #e0e0e0; /* Darker ash on hover */
+  }
+  

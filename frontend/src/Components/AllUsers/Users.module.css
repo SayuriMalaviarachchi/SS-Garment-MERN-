@@ -1,7 +1,7 @@
 .container {
-    background-color: #f2f2f2; /* Ash color background */
+    background-color: #f2f2f2; /* Ash background */
     padding: 20px;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -13,29 +13,14 @@
     margin-bottom: 20px;
   }
   
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #002244; /* Navy blue */
-  }
-  
   input {
     padding: 10px;
+    width: 100%;
+    max-width: 400px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 20px;
     font-size: 16px;
-  }
-  
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="tel"] {
     background-color: #e8e8e8; /* Light ash for inputs */
   }
   
@@ -47,6 +32,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 18px;
+    margin: 5px;
   }
   
   button:hover {
@@ -56,5 +42,18 @@
   input:focus {
     outline: none;
     border-color: #002244;
+  }
+  
+  .no-results {
+    text-align: center;
+    color: #ff0000; /* Red color to highlight no results */
+  }
+  
+  .user-details {
+    padding: 10px;
+    background-color: #e0e0e0; /* Slightly darker ash for user details */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
