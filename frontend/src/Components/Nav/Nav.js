@@ -40,12 +40,12 @@ export default function Nav() {
 
         <li className=" home-ll"></li>
         <Link to="/Sign Up" className="active home-a">
-        <button>Sign Up</button>
+        <button >Sign Up</button>
         </Link>
 
         <li className=" home-ll"></li>
         <Link to="/log Up" className="active home-a">
-        <button>Login</button>
+        <button >Login</button>
         </Link>
 
 
